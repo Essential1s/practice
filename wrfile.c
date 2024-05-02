@@ -22,5 +22,20 @@ int main() {
 		printf("ne poluchilos zakrit file\n");
 		exit(-1);
 	}
+	char resstring[14];
+	if((fd = open("wrfile.txt", O_RDONLY)) < 0) {
+		printf("error open file to read\n");
+		exit(-1);
+	}
+	size - read(fd, resstring, 14);
+	if (size != 14) {
+		printf("ne udalos read 14 byte out file\n");
+		exit(-1);
+		}
+		else printf("read stroka: %s\n", resstring);
+		if (close(fd) < 0) {
+			printf("ne poluchilos close file\n");
+			exit(-1);
+	}
 	return 0;
 }
